@@ -44,6 +44,9 @@ CUDA_VISIBLE_DEVICES=0 python train_coreset.py --dataset cora --device cuda:0 --
 For example, run the following command:
 
 ```
+python condense_transduct_2.py --section cora-r05  --gpuid 0 --lam 0.75 --T 1500 --scheduler geom   \
+--min_start_epoch 0 --max_start_epoch 200 --expert_epochs 1400   \
+--syn_steps 2500 --max_start_epoch_s 50 --lr_feat 0.0001 --lr_y 0.00005 --beta 0.01 --soft_label
 ```
 
 ## Evaluation
