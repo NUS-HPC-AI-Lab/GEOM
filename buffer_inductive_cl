@@ -107,10 +107,7 @@ def main(args):
             size = training_scheduler(args.lam, e, T, scheduler)
             
             print(size)
-            # print(output.shape)
-            # print(sorted_trainset.shape)
-            # print(sorted_trainset[:int(size * sorted_trainset.shape[0])])
-            
+
             training_subset = sorted_trainset[:int(size * sorted_trainset.shape[0])]
             
             # print(training_subset)
