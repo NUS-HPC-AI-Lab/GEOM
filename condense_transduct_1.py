@@ -42,7 +42,6 @@ parser.add_argument('--optim_lr', type=int, default=0, help='whether use LR lr l
 parser.add_argument('--optimizer_lr', type=str, default='Adam', help='See choices', choices=['Adam', 'SGD'])
 parser.add_argument('--coreset_method', type=str, default='kcenter')
 parser.add_argument('--coreset_seed', type=int, default=15)
-parser.add_argument('--Sequential_Generation', type=bool, default=True, help='Wether to use new matching strategy')
 parser.add_argument('--max_start_epoch_s', type=int, default=1) 
 parser.add_argument('--max_start_epoch', type=int, default=5)    
 parser.add_argument('--min_start_epoch', type=int, default=0)     
