@@ -45,12 +45,12 @@ python condense_transduct_2.py --T=1200 --beta=0 --max_start_epoch_s=30 --expert
 
 # reddit
 # 0125
-python condense_induct_2.py --section reddit-r0125  --gpuid 0 --lam 0.9 --T 800 --scheduler linear  \
+python condense_induct_1.py --section reddit-r0125  --gpuid 0 --lam 0.9 --T 800 --scheduler linear  \
 --min_start_epoch 0 --max_start_epoch 200 --syn_steps 1300 --expert_epochs 1100 --max_start_epoch_s 1   \
 --lr_feat 0.001 --beta 0.25 --lr_y 0.0001 --tem 1.5 --lr_tem 0.005 --maxtem 2.5
 
 # 0075
-python condense_induct_2.py --T=800 --beta=0.2 --max_start_epoch_s=50 --expert_epochs=900     \
+python condense_induct_1.py --T=800 --beta=0.2 --max_start_epoch_s=50 --expert_epochs=900     \
 --lam=0.9 --lr_feat=0.001 --lr_tem=0.005 --lr_y=0.0001 --max_start_epoch=250 --maxtem=1 --min_start_epoch=0 --scheduler=linear     \
 --section=reddit-r0075  --syn_steps=1300 --tem=1
 
