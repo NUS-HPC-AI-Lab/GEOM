@@ -5,12 +5,46 @@ The overall framework of the proposed GEOM:
 
 ![pipeline](figures/pipeline.png)
 
-Experimental Results:
 
 ## Requirements
 Please see [requirements](/requirements).
-```bibtex
+
+Run the following command to install:
+
+```
 pip install -r requirements.txt
+```
+
+## Buffer
+To get expert trajectories. 
+
+For example, run the following command:
+
+```
+```
+
+## Condensation
+To get the condensed graph.
+
+(1) Get the initialization with coreset methods.
+
+For example, run the following command:
+
+```
+```
+
+(2) Optimize the condensed graph.
+
+For example, run the following command:
+
+```
+```
+
+## Evaluation
+To evaluate the condensed graph.
+
+For example, run the following command:
+```
 ```
 
 
@@ -20,7 +54,7 @@ Our code is built upon [SFGC](https://github.com/Amanda-Zheng/SFGC) and [CLNode]
 ## Citation
 Welcome to discuss with [yuchenzhang@std.uestc.edu.cn](mailto:yuchenzhang@std.uestc.edu.cn). If you find this repo to be useful, please cite our paper. 
 
-```bibtex
+```
 @inproceedings{
 }
 ```
