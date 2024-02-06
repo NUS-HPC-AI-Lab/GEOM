@@ -68,6 +68,7 @@ Welcome to discuss with [yuchenzhang@std.uestc.edu.cn](mailto:yuchenzhang@std.ue
 @inproceedings{zhang2024Navigating,
   title={Navigating Complexity: Toward Lossless Graph Condensation via Expanding Window Matching},
   author={Yuchen Zhang and Tianle Zhang and Kai Wang and Ziyao Guo and Yuxuan Liang and Xavier Bresson and Wei Jin and Yang You},
+  journal={arXiv preprint arXiv:2402},
   year={2024}
   }
 ```
