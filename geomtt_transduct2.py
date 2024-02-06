@@ -430,8 +430,8 @@ class MetaGtt:
                     random.shuffle(self.buffer)
 
                     
-            if args.Sequential_Generation:
-                Upper_Bound = args.current_max_start_epoch + it
+            if args.expanding_window:
+                Upper_Bound = args.max_start_epoch_s + it
                 Upper_Bound = min(Upper_Bound, args.max_start_epoch)                                       
             else:
                 Upper_Bound = args.max_start_epoch
