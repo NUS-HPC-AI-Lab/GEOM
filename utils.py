@@ -17,6 +17,14 @@ from torch_geometric.data import NeighborSampler
 from torch_geometric.utils import add_remaining_self_loops, to_undirected
 from torch_geometric.datasets import Planetoid
 from torch_geometric.utils import degree
+import math
+import torch.nn.functional as F
+from torch_geometric.utils import add_self_loops
+from torch_geometric.data import Data
+import torch
+import os
+# os.environ["CUDA_VISIBLE_DEVICES"] = "1"
+# torch.cuda.device_count()
 import logging
 
 
@@ -411,17 +419,6 @@ def get_eval_pool(eval_mode, model, model_eval):
 
 
 
-# 计算节点难易程度 进行cl
-import math
-
-import torch
-import torch.nn.functional as F
-from torch_geometric.utils import add_self_loops
-from torch_geometric.data import Data
-import torch
-import os
-# os.environ["CUDA_VISIBLE_DEVICES"] = "1"
-# torch.cuda.device_count()
 
 
 
@@ -477,29 +474,6 @@ def neighborhood_difficulty_measurer_in(data, adj, label):
     return local_difficulty.to(device)
 
 
-def neighborhood_difficulty_measurer_test(data, adj, label):
-    edge_index = adj.coalesce().indices()
-    edge_value = adj.coalesce().values()
-
-    neighbor_label, _ = add_self_loops(edge_index)  #[[1, 1, 1, 1],[2, 3, 4, 5]]
- 
- 
-    neighbor_label[1] = label[neighbor_label[1]]   #[[1, 1, 1, 1],[40, 20, 19, 21]]
-
-    neighbor_label = torch.transpose(neighbor_label, 0, 1)  # [[1, 40], [1, 20], [1, 19], [1, 21]]
- 
-    index, count = torch.unique(neighbor_label, sorted=True, return_counts=True, dim=0)
-    
-
-    neighbor_class = torch.sparse_coo_tensor(index.T, count) 
-    neighbor_class = neighbor_class.to_dense().float()
-
-    neighbor_class = neighbor_class[data.idx_test]
-    neighbor_class = F.normalize(neighbor_class, 1.0, 1)
-    neighbor_entropy = -1 * neighbor_class * torch.log(neighbor_class + torch.exp(torch.tensor(-20)))  # 防止log里面是0出现异常
-    local_difficulty = neighbor_entropy.sum(1)
-    print('done')
-    return local_difficulty.to(device)
 
 def difficulty_measurer(data, adj, label):
     local_difficulty = neighborhood_difficulty_measurer(data, adj, label)
@@ -507,7 +481,7 @@ def difficulty_measurer(data, adj, label):
     node_difficulty = local_difficulty 
     return node_difficulty
 
-# sort training nodes by difficulty
+
 def sort_training_nodes(data, adj, label):
     node_difficulty = difficulty_measurer(data, adj, label)
     _, indices = torch.sort(node_difficulty)
@@ -523,7 +497,7 @@ def difficulty_measurer_in(data, adj, label):
     node_difficulty = local_difficulty 
     return node_difficulty
 
-# sort training nodes by difficulty
+
 def sort_training_nodes_in(data, adj, label):
     node_difficulty = difficulty_measurer_in(data, adj, label)
     _, indices = torch.sort(node_difficulty)
@@ -531,20 +505,6 @@ def sort_training_nodes_in(data, adj, label):
 
     return indices
 
-
-def difficulty_measurer_test(data, adj, label):
-    local_difficulty = neighborhood_difficulty_measurer_test(data, adj, label)
-    # global_difficulty = feature_difficulty_measurer(data, label, embedding)
-    node_difficulty = local_difficulty 
-    return node_difficulty
-
-# sort training nodes by difficultytest
-def sort_training_nodes_test(data, adj, label):
-    node_difficulty = difficulty_measurer_test(data, adj, label)
-    _, indices = torch.sort(node_difficulty)
-    indices = indices.cpu().numpy()
-
-    return indices
 
 
 def training_scheduler(lam, t, T, scheduler='geom'):
