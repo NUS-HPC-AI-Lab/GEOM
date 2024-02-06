@@ -1,1 +1,543 @@
+{"citeseer-r025 ": {
+  "dataset": "citeseer",
+  "device": "cuda:0",
+
+
+  "reduction_rate": 0.25,
+  "ntk_reg": 1.0,
+  "eval_interval": 1,
+
+  "load_path": "./logs/Distill/",
+  "seed": 3,
+  
+  "test_lr_model": 0.003,
+  "test_wd": 0.005,
+  "test_model_iters": 500,
+  "nruns": 10,
+  "test_dropout": 0.3,
+  "best_ntk_score": 1,
+  "test_opt_type": "Adam",
+  "test_model_type": "GCN",
+
+  "test_nlayers": 2,
+  "test_hidden": 256,
+  "tr_seed": 15,
+
+  "save_log": "logs",
+  "whole_data": 0,
+  "lr_decay": 0
+},
+
+
+"citeseer-r05 ": {
+  "dataset": "citeseer",
+  "device": "cuda:3",
+
+  "reduction_rate": 0.5,
+  "ntk_reg": 1.0,
+  "eval_interval": 1,
+ 
+  "test_lr_model": 0.001,
+  "test_wd": 0.0005,
+  "test_model_iters": 1000,
+  "nruns": 10,
+  "test_dropout": 0,
+  "best_ntk_score": 1,
+  "test_opt_type": "Adam",
+  "test_model_type": "GCN",
+
+  "load_path": "./logs/Distill/",
+  "seed": 3,
+
+  "test_nlayers": 2,
+  "test_hidden": 256,
+  "tr_seed": 15,
+
+  "save_log": "logs",
+  "whole_data": 0,
+  "lr_decay": 0
+},
+  "citeseer-r1 ": {
+  "dataset": "citeseer",
+  "device": "cuda:5",
+
+  
+  "reduction_rate": 1.0,
+  "ntk_reg": 1.0,
+  "eval_interval": 1,
+ 
+  "test_lr_model": 0.001,
+  "test_wd": 0.0005,
+  "test_model_iters": 1000,
+  "nruns": 10,
+  "test_dropout": 0,
+  "best_ntk_score": 1,
+  "test_opt_type": "Adam",
+  "test_model_type": "GCN",
+
+  "load_path": "./logs/Distill/",
+  "seed": 3,
+
+  "test_nlayers": 2,
+  "test_hidden": 256,
+  "tr_seed": 15,
+
+  "save_log": "logs",
+  "whole_data": 0,
+  "lr_decay": 0
+},
+  
+
+  "reddit-r0125": {
+    "dataset": "reddit",
+    "device": "cuda:0",
+
+    "reduction_rate": 0.125,
+
+    "load_path":"./logs/Distill/",
+    "seed": 3,
+
+    "test_lr_model": 0.005,
+    "test_wd": 0.001,
+    "test_model_iters": 300,
+    "nruns": 5,
+    "test_dropout": 0,
+    "best_ntk_score": 1,
+    "test_opt_type": "Adam",
+    "test_model_type": "GCN",
+    "test_nlayers": 2,
+    "test_hidden": 256,
+    "tr_seed": 15,
+    
+
+    "whole_data": 0,
+    "lr_decay": 0
+  }, 
+  "reddit-r0075 ": {
+    "dataset": "reddit",
+    "device": "cuda:0",
+
+    
+    "reduction_rate": 0.075,
+    "ntk_reg": 0.0001,
+    "eval_interval": 1,
+    "ITER": 400,
+    "samp_iter": 1,
+    "samp_num_per_class": 50,
+    "test_lr_model": 0.01,
+    "test_wd": 0.001,
+    "test_model_iters": 240,
+    "nruns": 5,
+
+    "load_path":"./logs/Distill/",
+    "seed": 3,
+
+
+    "test_dropout": 0,
+    "best_ntk_score": 1,
+    "test_opt_type": "Adam",
+    "test_model_type": "GCN",
+    "test_nlayers": 2,
+    "test_hidden": 256,
+    "tr_seed": 15,
+
+    "save_log": "logs",
+    "whole_data": 0,
+    "lr_decay": 0
+  },
+
+
+
+  "reddit-r00005 ": {
+    "dataset": "reddit",
+    "device": "cuda:5",
+
+    "reduction_rate": 0.0005,
+    "ntk_reg": 0.01,
+    "eval_interval": 1,
+    "ITER": 3000,
+    "samp_iter": 5,
+    "samp_num_per_class": 50,
+    "test_lr_model": 0.005,
+    "test_wd": 0.005,
+    "test_model_iters": 200,
+    "nruns": 5,
+    "test_dropout": 0,
+    "best_ntk_score": 1,
+    "test_opt_type": "Adam",
+    "test_model_type": "GCN",
+    "test_nlayers": 2,
+    "test_hidden": 256,
+    "tr_seed": 15,
+
+
+    "load_path": "./logs/Distill/",
+    "seed": 3,
+
+
+    "save_log": "logs",
+    "whole_data": 0,
+    "lr_decay": 0
+  },
+    "reddit-r0001 ": {
+    "dataset": "reddit",
+    "device": "cuda:5",
+    
+    "reduction_rate": 0.001,
+    "ntk_reg": 0.01,
+    "eval_interval": 1,
+    "ITER": 3000,
+    "samp_iter": 1,
+    "samp_num_per_class": 50,
+    "test_lr_model": 0.01,
+    "test_wd": 0.005,
+    "test_model_iters": 300,
+    "nruns": 5,
+    "test_dropout": 0,
+    "best_ntk_score": 1,
+    "test_opt_type": "Adam",
+    "test_model_type": "GCN",
+    "test_nlayers": 2,
+    "test_hidden": 256,
+    "tr_seed": 15,
+    
+
+    "load_path": "./logs/Distill/",
+    "seed": 3,
+
+    
+    "save_log": "logs",
+    "whole_data": 0,
+    "lr_decay": 0
+  },
+    "reddit-r0005 ": {
+    "dataset": "reddit",
+    "device": "cuda:5",
+    
+    
+    "reduction_rate": 0.005,
+    "ntk_reg": 0.0001,
+    "eval_interval": 1,
+    "ITER": 3000,
+    "samp_iter": 1,
+    "samp_num_per_class": 50,
+    "test_lr_model": 0.01,
+    "test_wd": 0.005,
+    "test_model_iters": 300,
+    "nruns": 5,
+    "test_dropout": 0,
+    "best_ntk_score": 1,
+    "test_opt_type": "Adam",
+    "test_model_type": "GCN",
+    "test_nlayers": 2,
+    "test_hidden": 256,
+    "tr_seed": 15,
+    
+
+    "load_path": "./logs/Distill/",
+    "seed": 3,
+
+    
+    "save_log": "logs",
+    "whole_data": 0,
+    "lr_decay": 0
+  },
+  "cora-r025 ": {
+    "dataset": "cora",
+    "device": "cuda:0",
+    "reduction_rate": 0.25,
+
+
+    "load_path": "./logs/Distill/",
+    "seed": 3,
+
+    "best_ntk_score": 1,
+    "test_opt_type": "Adam",
+    "test_model_type": "GCN",
+    "test_nlayers": 2,
+    "test_hidden": 256,
+    "tr_seed": 15,
+    "test_lr_model": 0.001,
+    "test_wd": 0.0005,
+    "test_model_iters": 600,
+    "nruns": 10,
+    "test_dropout": 0,
+    "whole_data": 0,
+    "lr_decay": 0
+  },
+  "cora-r05 ": {
+    "dataset": "cora",
+    "device": "cuda:0",
+    "reduction_rate": 0.5,
+    "ntk_reg": 1.0,
+    "test_lr_model": 0.001,
+    "test_wd": 0.001,
+    "test_model_iters": 600,
+    "nruns": 10,
+    "test_dropout": 0,
+    "best_ntk_score": 1,
+    "test_opt_type": "Adam",
+    "test_model_type": "GCN",
+
+    "load_path": "./logs/Distill/",
+    "seed": 3,
+
+    "test_nlayers": 2,
+    "test_hidden": 256,
+    "tr_seed": 15,
+    "save_log": "logs",
+    "whole_data": 0,
+    "lr_decay": 0
+  },
+    "cora-r1 ": {
+    "dataset": "cora",
+    "device": "cuda:0",
+    "reduction_rate": 1.0,
+    "ntk_reg": 1.0,
+    "test_lr_model": 0.01,
+    "test_wd": 0.0005,
+    "test_model_iters": 600,
+    "nruns": 10,
+    "test_dropout": 0,
+    "best_ntk_score": 1,
+    "test_opt_type": "Adam",
+    "test_model_type": "GCN",
+
+    "load_path": "./logs/Distill/",
+    "seed": 3,
+
+    "test_nlayers": 2,
+    "test_hidden": 256,
+    "tr_seed": 15,
+    "save_log": "logs",
+    "whole_data": 0,
+    "lr_decay": 0
+  },
+
+  "ogbn-arxiv-r01": {
+    "dataset": "ogbn-arxiv",
+    "device": "cuda:0",
+    "reduction_rate": 0.1,
+    "test_nlayers": 2,
+    "test_hidden": 256,
+    "tr_seed": 15,
+    "seed": 3,
+    "best_ntk_score":1,
+    "load_path": "./logs/Distill/",
+    
+
+    "test_lr_model": 0.01,
+    "test_wd": 0.001,
+    "test_model_iters": 300,
+    "nruns": 5,
+    "test_dropout": 0,
+    "test_opt_type": "Adam",
+    "test_model_type": "GCN",
+    "whole_data": 0,
+    "lr_decay": 0
+  },
+  "ogbn-arxiv-r005 ": {
+    "dataset": "ogbn-arxiv",
+    "device": "cuda:0",
+  
+  
+    "reduction_rate": 0.05,
+    "ntk_reg": 1.0,
+    "best_ntk_score":1,
+
+    "load_path": "./logs/Distill/",
+    "seed": 3,
+    
+    "test_nlayers": 2,
+    "test_hidden": 256,
+    "tr_seed": 15,
+    
+    "whole_data": 0,
+    "lr_decay": 0,
+    "test_lr_model": 0.01,
+    "test_wd": 0.001,
+    "test_model_iters": 300,
+    "nruns": 5,
+    "test_dropout": 0,
+    "test_opt_type": "Adam",
+    "test_model_type": "GCN"
+  },    
+  "ogbn-arxiv-r001 ": {
+    "dataset": "ogbn-arxiv",
+    "device": "cuda:0",
+  
+    
+    "reduction_rate": 0.01,
+    "ntk_reg": 1.0,
+    "eval_interval": 1,
+    "best_ntk_score":1,
+    
+    "samp_num_per_class": 10,
+    "test_nlayers": 2,
+    "test_hidden": 256,
+    "tr_seed": 15,
+
+    "load_path": "./logs/Distill/",
+    "seed": 3,
+
+
+    "whole_data": 0,
+    "lr_decay": 0,
+    "test_lr_model": 0.01,
+    "test_wd": 0.001,
+    "test_model_iters": 300,
+    "nruns": 5,
+    "test_dropout": 0,
+    "test_opt_type": "Adam",
+    "test_model_type": "GCN"
+  },
+  
+"ogbn-arxiv-r0005 ": {
+  "dataset": "ogbn-arxiv",
+  "device": "cuda:0",
+
+  "reduction_rate": 0.005,
+  "ntk_reg": 1.0,
+  "best_ntk_score":1,
+
+  "load_path": "./logs/Distill/",
+  "seed": 3,
+  
+  "test_nlayers": 2,
+  "test_hidden": 256,
+  "tr_seed": 15,
+
+  "whole_data": 0,
+  "lr_decay": 0,
+  "test_lr_model": 0.01,
+  "test_wd": 0.001,
+  "test_model_iters": 300,
+  "nruns": 5,
+  "test_dropout": 0,
+  "test_opt_type": "Adam",
+  "test_model_type": "GCN"
+},
+"ogbn-arxiv-r0001 ": {
+  "dataset": "ogbn-arxiv",
+  "device": "cuda:0",
+
+  
+  "reduction_rate": 0.001,
+  "ntk_reg": 0.1,
+  "eval_interval": 1,
+  "ITER": 200,
+  "samp_iter": 1,
+  "samp_num_per_class": 50,
+  "test_nlayers": 2,
+  "test_hidden": 256,
+  "tr_seed": 15,
+
+  "best_ntk_score":1,
+
+  "load_path": "./logs/Distill/",
+  "seed": 3,
+
+  "whole_data": 0,
+  "lr_decay": 0,
+  "test_lr_model": 0.01,
+  "test_wd": 0.005,
+  "test_model_iters": 100,
+  "nruns": 5,
+  "test_dropout": 0,
+  "test_opt_type": "Adam",
+  "test_model_type": "GCN"
+},
+  
+  "flickr-r001 ": {
+    "dataset": "flickr",
+    "device": "cuda:0",
+    
+    "reduction_rate": 0.01,
+    "ntk_reg": 0.1,
+    "eval_interval": 1,
+    
+    "test_lr_model": 0.001,
+    "test_wd": 0.5,
+    "test_model_iters": 200,
+    "nruns": 10,
+    "test_dropout": 0,
+    "best_ntk_score": 1,
+    "test_opt_type": "Adam",
+    "test_model_type": "GCN",
+
+    
+    "load_path": "./logs/Distill/",
+    "seed": 3,
+    
+    
+    "test_nlayers": 2,
+    "test_hidden": 256,
+    "tr_seed": 15,
+
+    "save_log": "logs",
+    "whole_data": 0,
+    "lr_decay": 0
+  },
+  "flickr-r0005 ": {
+  "dataset": "flickr",
+  "device": "cuda:0",
+  
+  "reduction_rate": 0.005,
+  "ntk_reg": 0.01,
+  "eval_interval": 1,
+  
+  "test_lr_model": 0.0005,
+  "test_wd": 0.07,
+  "test_model_iters": 200,
+  "nruns": 10,
+  "test_dropout": 0.6,
+  "best_ntk_score": 1,
+  "test_opt_type": "Adam",
+  "test_model_type": "GCN",
+
+  "load_path": "./logs/Distill/",
+  "seed": 3,
+  
+  
+  "test_nlayers": 2,
+  "test_hidden": 256,
+  "tr_seed": 15,
+  
+  "save_log": "logs",
+  "whole_data": 0,
+  "lr_decay": 0
+},
+"flickr-r0001 ": {
+  "dataset": "flickr",
+  "device": "cuda:0",
+
+  "reduction_rate": 0.001,
+  "ntk_reg": 1.0,
+  "eval_interval": 1,
+
+  "test_lr_model": 0.001,
+  "test_wd": 0.5,
+  "test_model_iters": 200,
+  "nruns": 10,
+  "test_dropout": 0,
+  "best_ntk_score": 1,
+  "test_opt_type": "Adam",
+  "test_model_type": "GCN",
+  "load_path": "./logs/Distill/",
+  "seed": 3,
+  
+  
+  "test_nlayers": 2,
+  "test_hidden": 256,
+  "tr_seed": 15,
+  
+  "save_log": "logs",
+  "whole_data": 0,
+  "lr_decay": 0
+}
+  
+
+
+}
+
 
