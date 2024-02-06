@@ -8,7 +8,7 @@ The overall framework of the proposed GEOM:
 In the buffer phase, we train the expert trajectories with curriculum learning to involve more informative supervision signals from the original graph. In the condensation phase, we utilize expanding window matching to capture the rich information. Moreover, a knowledge embedding extractor is used to further extract knowledge from the expert trajectories with a new perspective.
 
 ## Requirements
-Please see [requirements](/requirements).
+Please see [requirements](/requirements.txt).
 
 Run the following command to install:
 
