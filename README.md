@@ -35,6 +35,8 @@ To get the condensed graph.
 For example, run the following command:
 
 ```
+CUDA_VISIBLE_DEVICES=0 python train_coreset.py --dataset cora --device cuda:0 --epochs 1 --lr 0.01 --lr_coreset 0.005 \
+--weight_decay 5e-4 --wd_coreset 5e-4 --save 1 --method kcenter --reduction_rate 0.5
 ```
 
 (2) Optimize the condensed graph.
