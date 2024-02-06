@@ -20,7 +20,6 @@ from models.gat import GAT
 import scipy.sparse as sp
 from utils_graphsaint import DataGraphSAINT
 from utils import *
-from gntk_cond import GNTK
 import logging
 from tensorboardX import SummaryWriter
 from sklearn.neighbors import kneighbors_graph
