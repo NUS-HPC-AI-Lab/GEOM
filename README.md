@@ -22,6 +22,9 @@ To get expert trajectories.
 For example, run the following command:
 
 ```
+CUDA_VISIBLE_DEVICES=4 python buffer_transduct_cl.py --lr_teacher 0.4 \
+--teacher_epochs 3000 --dataset cora   \
+--num_experts=200 --wd_teacher 0 --optim SGD --lam 0.75 --T 1500 --scheduler geom
 ```
 
 ## Condensation
