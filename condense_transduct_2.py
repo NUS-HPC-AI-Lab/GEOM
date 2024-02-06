@@ -43,8 +43,7 @@ parser.add_argument('--optim_lr', type=int, default=0, help='whether use LR lr l
 parser.add_argument('--optimizer_lr', type=str, default='Adam', help='See choices', choices=['Adam', 'SGD'])
 parser.add_argument('--coreset_method', type=str, default='kcenter')
 parser.add_argument('--coreset_seed', type=int, default=15)
-parser.add_argument('--Sequential_Generation', type=bool, default=True, help='Wether to use new matching strategy')
-parser.add_argument('--current_max_start_epoch', type=int, default=1) 
+parser.add_argument('--max_start_epoch_s', type=int, default=1) 
 parser.add_argument('--max_start_epoch', type=int, default=5)    
 parser.add_argument('--min_start_epoch', type=int, default=0)     
 parser.add_argument('--nruns', type=int, default=1)
@@ -86,11 +85,11 @@ for key, value in section_config.items():
 
 
 if args.soft_label == True:
-    log_dir = './' + args.save_log + '/Distill/beta{}-norm-2-val-kd2-lr_y{}-{}-reduce_{}-lam-{}-T-{}-scheduler-{}-min{}-max{}-syn_steps{}-expert_epochs{}-lr_feat{}-current_max_start_epoch{}'.format(args.beta,args.lr_y,args.dataset, str(args.reduction_rate),args.lam,args.T,args.scheduler
-                                                                                            ,args.min_start_epoch,args.max_start_epoch,args.syn_steps,args.expert_epochs,args.lr_feat,args.current_max_start_epoch)
+    log_dir = './' + args.save_log + '/Distill/beta{}-norm-2-val-kd2-lr_y{}-{}-reduce_{}-lam-{}-T-{}-scheduler-{}-min{}-max{}-syn_steps{}-expert_epochs{}-lr_feat{}-max_start_epoch_s{}'.format(args.beta,args.lr_y,args.dataset, str(args.reduction_rate),args.lam,args.T,args.scheduler
+                                                                                            ,args.min_start_epoch,args.max_start_epoch,args.syn_steps,args.expert_epochs,args.lr_feat,args.max_start_epoch_s)
 else:
-    log_dir = './' + args.save_log + '/Distill/beta{}-norm-2-val-{}-reduce_{}-lam-{}-T-{}-scheduler-{}-min{}-max{}-syn_steps{}-expert_epochs{}-lr_feat{}-current_max_start_epoch{}'.format(args.beta,args.dataset, str(args.reduction_rate),args.lam,args.T,args.scheduler
-                                                                                            ,args.min_start_epoch,args.max_start_epoch,args.syn_steps,args.expert_epochs,args.lr_feat,args.current_max_start_epoch)
+    log_dir = './' + args.save_log + '/Distill/beta{}-norm-2-val-{}-reduce_{}-lam-{}-T-{}-scheduler-{}-min{}-max{}-syn_steps{}-expert_epochs{}-lr_feat{}-max_start_epoch_s{}'.format(args.beta,args.dataset, str(args.reduction_rate),args.lam,args.T,args.scheduler
+                                                                                            ,args.min_start_epoch,args.max_start_epoch,args.syn_steps,args.expert_epochs,args.lr_feat,args.max_start_epoch_s)
 
 
 args.device = f"cuda:{args.gpuid}"
