@@ -54,6 +54,7 @@ To evaluate the condensed graph.
 
 For example, run the following command:
 ```
+python eval_condg.py --section cora-r05 
 ```
 
 
