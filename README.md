@@ -5,6 +5,7 @@ The overall framework of the proposed GEOM:
 
 ![pipeline](figures/pipeline.png)
 
+In the \textit{buffer} phase, we train the expert trajectories with curriculum learning to involve more informative supervision signals from the original graph. In the \textit{condensation} phase, we utilize expanding window matching to capture the rich information. Moreover, a knowledge embedding extractor is used to further extract knowledge from the expert trajectories with a new perspective.
 
 ## Requirements
 Please see [requirements](/requirements).
