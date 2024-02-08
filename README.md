@@ -1,4 +1,4 @@
-# GEOM
+# GEOM | [Paper](https://arxiv.org/abs/2402.05011)
 Pytorch implementation of "Navigating Complexity: Toward Lossless Graph Condensation via Expanding Window Matching".
 
 The overall framework of the proposed GEOM:
@@ -8,7 +8,7 @@ The overall framework of the proposed GEOM:
 In the buffer phase, we train the expert trajectories with curriculum learning to involve more informative supervision signals from the original graph. In the condensation phase, we utilize expanding window matching to capture the rich information. Moreover, a knowledge embedding extractor is used to further extract knowledge from the expert trajectories with a new perspective.
 
 
-The condensed graphs are available at https://drive.google.com/file/d/1L9hsH1j8jFVeygso_hnns-pqSPhgcS_W/view?usp=sharing. To reproduce our results, please put the condensed graphs under logs/Distill and conduct the evaluation.
+The condensed graphs are available at [Google Drive](https://drive.google.com/file/d/1L9hsH1j8jFVeygso_hnns-pqSPhgcS_W/view?usp=sharing). To reproduce our results, please put the condensed graphs under logs/Distill and conduct the evaluation.
 
 ## Requirements
 Please see [requirements](/requirements.txt).
