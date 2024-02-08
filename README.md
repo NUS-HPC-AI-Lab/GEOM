@@ -1,5 +1,5 @@
-# GEOM | [Paper](https://arxiv.org/abs/2402.05011)
-Pytorch implementation of "Navigating Complexity: Toward Lossless Graph Condensation via Expanding Window Matching".
+# GEOM 
+Pytorch implementation of ["Navigating Complexity: Toward Lossless Graph Condensation via Expanding Window Matching"](https://arxiv.org/abs/2402.05011).
 
 The overall framework of the proposed GEOM:
 
