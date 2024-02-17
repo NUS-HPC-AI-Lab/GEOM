@@ -68,10 +68,10 @@ Our code is built upon [SFGC](https://github.com/Amanda-Zheng/SFGC) and [CLNode]
 Welcome to discuss with [yuchenzhang@std.uestc.edu.cn](mailto:yuchenzhang@std.uestc.edu.cn). If you find this repo to be useful, please cite our paper. 
 
 ```
-@inproceedings{zhang2024Navigating,
+@article{zhang2024navigating,
   title={Navigating Complexity: Toward Lossless Graph Condensation via Expanding Window Matching},
-  author={Yuchen Zhang and Tianle Zhang and Kai Wang and Ziyao Guo and Yuxuan Liang and Xavier Bresson and Wei Jin and Yang You},
-  journal={arXiv preprint arXiv:2402},
+  author={Zhang, Yuchen and Zhang, Tianle and Wang, Kai and Guo, Ziyao and Liang, Yuxuan and Bresson, Xavier and Jin, Wei and You, Yang},
+  journal={arXiv preprint arXiv:2402.05011},
   year={2024}
-  }
+}
 ```
