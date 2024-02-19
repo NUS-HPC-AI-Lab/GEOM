@@ -56,12 +56,12 @@ def main(args):
     
     
     
-    for it in range(0, args.num_experts):  #最外层循环 控制多少个expert
+    for it in range(0, args.num_experts):  
         logging.info(
             '======================== {} -th number of experts for {}-model_type=============================='.format(
                 it, model_type))
 
-        model_class = eval(model_type) # 从字符串获取模型的类
+        model_class = eval(model_type) 
         
         
         model = model_class(nfeat=features.shape[1], nhid=args.teacher_hidden, dropout=args.teacher_dropout,
@@ -85,7 +85,7 @@ def main(args):
             # optimizer_model_assit = torch.optim.SGD(model_parameters_assit, lr=args.lr_teacher, momentum=args.mom_teacher,
             #                                   weight_decay=args.wd_teacher)
 
-        timestamps = []  #存储模型参数
+        timestamps = []  
 
         timestamps.append([p.detach().cpu() for p in model.parameters()])
 
@@ -110,7 +110,7 @@ def main(args):
         
         
         
-        for e in range(args.teacher_epochs + 1): # 内层循环 控制teacher model多少个epoch
+        for e in range(args.teacher_epochs + 1): 
             model.train()
             optimizer_model.zero_grad()
             _,output = model.forward(features, adj)  
@@ -132,7 +132,7 @@ def main(args):
             loss_buffer.backward()
             optimizer_model.step()
 
-            if e in lr_schedule and args.decay:  # 控制学习率衰减
+            if e in lr_schedule and args.decay: 
                 lr = lr*args.decay_factor
                 logging.info('NOTE! Decaying lr to :{}'.format(lr))
                 if args.optim == 'SGD':
@@ -143,7 +143,7 @@ def main(args):
 
                 optimizer_model.zero_grad()
 
-            if e % 20 == 0: # 每过20个epoch eval一次
+            if e % 20 == 0: 
                 logging.info("Epochs: {} : Train set training:, loss= {:.4f}".format(e, loss_buffer.item()))
                 model.eval()
                 labels_val = torch.LongTensor(data.labels_val).cuda()
@@ -168,11 +168,11 @@ def main(args):
                     best_test_acc = acc_test
                     best_it = e
 
-            if e % args.param_save_interval == 0 and e>1:  # 每过param_save_interval就save一次模型
+            if e % args.param_save_interval == 0 and e>1: 
                 timestamps.append([p.detach().cpu() for p in model.parameters()])                
                 p_current = timestamps[-1]
                 p_0 = timestamps[0]
-                target_params = torch.cat([p_c.data.reshape(-1) for p_c in p_current], 0)  # 按照0维进行cat 创建一个1*n的tensor
+                target_params = torch.cat([p_c.data.reshape(-1) for p_c in p_current], 0)
                 starting_params = torch.cat([p0.data.reshape(-1) for p0 in p_0], 0)
                 param_dist1 = torch.nn.functional.mse_loss(starting_params, target_params, reduction="sum")
                 writer.add_scalar('param_change', param_dist1.item(), e)
@@ -182,7 +182,7 @@ def main(args):
         logging.info("Valid set best results: accuracy= {:.4f}".format(best_val_acc.item()))
         logging.info("Test set best results: accuracy= {:.4f} within best iteration = {}".format(best_test_acc.item(),best_it))
         
-        trajectories.append(timestamps)  # traj【【timestamps【param 1, param 11, ... param n】】【timestamps2】...【timestamps3】】
+        trajectories.append(timestamps)  
 
         if len(trajectories) == args.traj_save_interval:
             n = 0
@@ -190,7 +190,7 @@ def main(args):
                 n += 1
             logging.info("Saving {}".format(os.path.join(log_dir, "replay_buffer_{}.pt".format(n))))
             torch.save(trajectories, os.path.join(log_dir, "replay_buffer_{}.pt".format(n)))
-            trajectories = []  # 每十个expert保存在一个trajectories里面
+            trajectories = [] 
 
 
 
