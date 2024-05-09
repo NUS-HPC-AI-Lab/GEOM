@@ -622,7 +622,7 @@ class MetaGtt:
                     # writer.add_scalar('ntk_acc_eval_curve', best_acc_eval, it)
 
 
-                    if best_acc_test > best_accs_test[model_eval]:
+                    if best_acc_eval > best_accs_eval[model_eval]:
                         best_accs_test[model_eval] = best_acc_test
                         best_accs_test_iter[model_eval] = it
                         torch.save(adj_syn_save,
