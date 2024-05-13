@@ -64,3 +64,28 @@ CUDA_VISIBLE_DEVICES=3 python train_coreset_inductive.py --dataset reddit --devi
 #@reddit-r0005
 CUDA_VISIBLE_DEVICES=3 python train_coreset_inductive.py --dataset reddit --device cuda:0 --epochs 1000 --lr 0.001 \
 --weight_decay 5e-4  --save 1 --method kcenter --reduction_rate 0.005 --load_npy ''
+
+#@reddit-r0025
+CUDA_VISIBLE_DEVICES=3 python train_coreset_inductive.py --dataset reddit --device cuda:0 --epochs 1000 --lr 0.001 \
+--weight_decay 5e-4  --save 1 --method kcenter --reduction_rate 0.025 --load_npy ''
+
+#@reddit-r01
+CUDA_VISIBLE_DEVICES=3 python train_coreset_inductive.py --dataset reddit --device cuda:0 --epochs 1000 --lr 0.001 \
+--weight_decay 5e-4  --save 1 --method kcenter --reduction_rate 0.1 --load_npy ''
+
+#@reddit-r005
+CUDA_VISIBLE_DEVICES=3 python train_coreset_inductive.py --dataset reddit --device cuda:0 --epochs 1000 --lr 0.001 \
+--weight_decay 5e-4  --save 1 --method kcenter --reduction_rate 0.05 --load_npy ''
+
+#@reddit-r006
+CUDA_VISIBLE_DEVICES=0 python train_coreset_inductive.py --dataset reddit --device cuda:0 --epochs 1000 --lr 0.001 \
+--weight_decay 5e-4  --save 1 --method kcenter --reduction_rate 0.06 --load_npy ''
+
+#@reddit-r0125
+
+CUDA_VISIBLE_DEVICES=3 python train_coreset_inductive.py --dataset reddit --device cuda:0 --epochs 1000 --lr 0.001 \
+--weight_decay 5e-4  --save 1 --method kcenter --reduction_rate 0.125 --load_npy ''
+
+#@reddit-r0075
+CUDA_VISIBLE_DEVICES=4 python train_coreset_inductive.py --dataset reddit --device cuda:0 --epochs 1000 --lr 0.001 \
+--weight_decay 5e-4  --save 1 --method kcenter --reduction_rate 0.075 --load_npy ''
