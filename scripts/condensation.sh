@@ -54,10 +54,25 @@ python condense_induct_1.py --T=800 --beta=0.2 --max_start_epoch_s=50 --expert_e
 --lam=0.9 --lr_feat=0.001 --lr_tem=0.005 --lr_y=0.0001 --max_start_epoch=250 --maxtem=1 --min_start_epoch=0 --scheduler=linear     \
 --section=reddit-r0075  --syn_steps=1300 --tem=1 --soft_label
 
+# 005
+python condense_induct_1.py --T=800 --beta=0.2 --max_start_epoch_s=50 --expert_epochs=900     \
+--lam=0.9 --lr_feat=0.001 --lr_tem=0.005 --lr_y=0.0001 --max_start_epoch=250 --maxtem=1 --min_start_epoch=0 --scheduler=linear     \
+--section=reddit-r005  --syn_steps=1300 --tem=1 --soft_label
+
+# 003
+python condense_induct_1.py --T=800 --beta=0.2 --max_start_epoch_s=50 --expert_epochs=900     \
+--lam=0.9 --lr_feat=0.001 --lr_tem=0.005 --lr_y=0.0001 --max_start_epoch=250 --maxtem=1 --min_start_epoch=0 --scheduler=linear     \
+--section=reddit-r003  --syn_steps=1300 --tem=1 --soft_label
+
 # 0005
 python condense_induct_1.py --T=800 --beta=0.25 --max_start_epoch_s=1    \
 --expert_epochs=900 --gpuid=2 --lam=0.9 --lr_feat=0.2 --lr_tem=0.005 --lr_y=0.0001 --max_start_epoch=10 --maxtem=1 --min_start_epoch=0    \
 --scheduler=linear --section=reddit-r0005  --syn_steps=800 --tem=1
+
+# 0002
+python condense_induct_1.py --T=800 --beta=0.25 --max_start_epoch_s=1    \
+--expert_epochs=900 --gpuid=2 --lam=0.9 --lr_feat=0.2 --lr_tem=0.005 --lr_y=0.0001 --max_start_epoch=10 --maxtem=1 --min_start_epoch=0    \
+--scheduler=linear --section=reddit-r0002  --syn_steps=800 --tem=1
 
 # 0001
 python condense_induct_1.py --T=800 --beta=0.1 --max_start_epoch_s=1 --expert_epochs=1000 --gpuid=3 --lam=0.9   \
