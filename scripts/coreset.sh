@@ -89,3 +89,11 @@ CUDA_VISIBLE_DEVICES=3 python train_coreset_inductive.py --dataset reddit --devi
 #@reddit-r0075
 CUDA_VISIBLE_DEVICES=4 python train_coreset_inductive.py --dataset reddit --device cuda:0 --epochs 1000 --lr 0.001 \
 --weight_decay 5e-4  --save 1 --method kcenter --reduction_rate 0.075 --load_npy ''
+
+#@reddit-r005
+CUDA_VISIBLE_DEVICES=4 python train_coreset_inductive.py --dataset reddit --device cuda:0 --epochs 1000 --lr 0.001 \
+--weight_decay 5e-4  --save 1 --method kcenter --reduction_rate 0.05 --load_npy ''
+
+#@reddit-r003
+CUDA_VISIBLE_DEVICES=4 python train_coreset_inductive.py --dataset reddit --device cuda:0 --epochs 1000 --lr 0.001 \
+--weight_decay 5e-4  --save 1 --method kcenter --reduction_rate 0.03 --load_npy ''
