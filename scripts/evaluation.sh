@@ -23,8 +23,10 @@
 # TEST: Full Graph Mean Accuracy: 0.937341, STD: 0.000443
 
 # python eval_condg.py --section reddit-r005 
+# TEST: Full Graph Mean Accuracy: 0.935667, STD: 0.000269
 
 # python eval_condg.py --section reddit-r003 
+# TEST: Full Graph Mean Accuracy: 0.930043, STD: 0.000815
 
 # python eval_condg.py --section reddit-r0005 
 # TEST: Full Graph Mean Accuracy: 0.914834, STD: 0.000859
