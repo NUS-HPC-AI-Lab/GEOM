@@ -16,7 +16,6 @@ import os
 import random
 import copy
 import scipy
-from gntk_cond import GNTK
 from utils_graphsaint import DataGraphSAINT
 from utils import *
 import wandb 
